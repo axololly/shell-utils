@@ -5,7 +5,7 @@ A series of programs I wrote for my Windows client to do neat things I'm too laz
 Come and see [the changelog](./CHANGELOG.md) for everything I've added to this.
 
 > [!IMPORTANT]
-> If you have MinGW installed, go for the binaries in `bin/`. If not, use `bin/share/`.
+> If you have MinGW installed, go for the binaries in [`bin/`](./bin/). If not, use [`bin/share/`](./bin/share/).
 
 ## Utilities
 
