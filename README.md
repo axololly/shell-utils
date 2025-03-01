@@ -3,7 +3,7 @@
 A series of programs I wrote for my Windows client to do neat things I'm too lazy to, that were written in C++.
 
 > [!TIP]
-> To see changes, view [the changelog](./CHANGELOG.md).
+> Come and see [the changelog](./CHANGELOG.md) for an idea of what this project has.
 
 ## Utilities
 
