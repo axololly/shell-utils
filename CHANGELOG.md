@@ -2,7 +2,7 @@
 
 This goes over all the changes that have been made to this repository.
 
-## [v1.0.1](# "Released March 1st, 2025")
+<h2 title="Released March 1st, 2025">v1.0.1</h2>
 
 * The `copy` utility was updated.
     * You can now copy file content with `-r`/`--read`.
