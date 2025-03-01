@@ -26,6 +26,17 @@ $ copy test.py
 
 Both of the above inputs are valid.
 
+## Source Code
+
+To view the source code of this executable, you can add the `--source` option.
+
+```ps1
+$ copy --source
+$ cp --source
+```
+
+These will attempt to open a web browser through Powershell and if that fails, it'll give a link for the user to manually open themselves.
+
 ## Features to Add
 
 - Improve the representation of errors with some ANSI colour codes.

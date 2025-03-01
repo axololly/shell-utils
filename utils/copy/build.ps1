@@ -14,7 +14,7 @@ Invoke-Expression "g++ -std=c++23 utils/copy/*.cpp -o bin/copy.exe"
 Copy-Item -Path "bin/copy.exe" -Destination "bin/cp.exe"
 
 # If the original source code couldn't compile, exit here.
-if ($LASTEXITCODE != 0) {
+if ($LASTEXITCODE -ne 0) {
     Break
 }
 

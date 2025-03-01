@@ -1,1 +1,1 @@
-void display_help();
+void display_help(char* executable_name);

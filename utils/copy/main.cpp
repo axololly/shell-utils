@@ -2,8 +2,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <windows.h>
-#include <shlobj.h>
 #include "utils.hpp"
 #include "help.hpp"
 
@@ -17,13 +15,32 @@ int main(int argc, char** argv) {
     }
 
     if (args.size() == 0) {
-        display_help();
+        display_help(argv[0]);
         return 0;
     }
 
     if (args[0] == "-h" || args[0] == "--help") {
-        display_help();
+        display_help(argv[0]);
         return 0;
+    }
+
+    if (args[0] == "--source") {
+        string url = "https://github.com/axololly/shell-utils/blob/main/utils/copy";
+        int exit_code = system(format("powershell.exe -c start \"{}\"", url).c_str());
+
+        if (exit_code != 0) {
+            cout << format(
+                "Could not open web browser. (Exit code: {})" "\n"
+                "You'll have to manually open the source code in a browser at the following URL:" "\n\n"
+                
+                "    \x1b[36m{}",
+                
+                exit_code,
+                url
+            );
+        }
+
+        return exit_code;
     }
 
     // Copying a string
