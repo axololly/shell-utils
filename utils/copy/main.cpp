@@ -18,6 +18,11 @@ int main(int argc, char** argv) {
         display_help(argv[0]);
         return 0;
     }
+    
+    if (args[0] == "-v" || args[0] == "--version") {
+        cout << format("copy.exe version {}", version);
+        return 0;
+    }
 
     if (args[0] == "-h" || args[0] == "--help") {
         display_help(argv[0]);
@@ -61,7 +66,25 @@ int main(int argc, char** argv) {
 
         copy_text(result);
 
-        cout << "Copied string to clipboard.";
+        cout << "Copied text to clipboard.";
+    }
+
+    else if (args[0] == "-r" || args[0] == "--read") {
+        if (args.size() == 1) {
+            cout << "No filepath provided to copy contents of to clipboard.";
+            return 1;
+        }
+        
+        string target = args[1];
+        
+        if (!filesystem::exists(target)) {
+            cout << "Path does not exist.";
+            return 1;
+        }
+
+        copy_file_contents(target);
+
+        cout << "Copied file contents to clipboard.";
     }
     
     // Copying a path
