@@ -1,8 +1,13 @@
+#include <filesystem>
+#include <fstream>
 #include <iostream>
 #include <string>
 #include <windows.h>
 #include <shlobj.h>
 #include "utils.hpp"
+
+using namespace std;
+using namespace std::filesystem;
 
 void copy_file(string& path) {
     if (!OpenClipboard(NULL)) {
@@ -61,10 +66,6 @@ void copy_file(string& path) {
     }
 
     CloseClipboard();
-
-    cout << "Copied files to clipboard!";
-
-    exit(0);
 }
 
 void copy_text(string& text) {
@@ -112,8 +113,22 @@ void copy_text(string& text) {
     }
 
     CloseClipboard();
+}
 
-    cout << "Copied text to clipboard!";
+void copy_file_contents(string& path) {
+    // Open a stream to the file that takes in content.
+    ifstream f(path);
 
-    exit(0);
+    // Build a string from an iterator over the file.
+    // (I really have no idea what the hell this does.)
+    string content(
+        (istreambuf_iterator<char>(f)),
+        istreambuf_iterator<char>()
+    );
+
+    f.close();
+
+    // Use one of our already created functions
+    // instead of rewriting the logic.
+    copy_text(content);
 }
