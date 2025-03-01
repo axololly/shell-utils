@@ -8,7 +8,7 @@ This is a command line tool that interacts with the Windows API to copy files an
 
 You can copy text by using the `-s` flag. This will group together all the arguments after it and copy that to the clipboard.
 
-```ps1
+```sh
 $ copy -s "Hello world"
 $ copy -s Hello world
 ```
@@ -19,7 +19,7 @@ Both of the above inputs are valid.
 
 To copy a file, simply list the target filepath as the first argument. Relative paths are permitted, and this will interact with the Windows API to place the target file onto the clipboard, if possible.
 
-```ps1
+```sh
 $ copy ..\example.txt
 $ copy test.py
 ```
@@ -30,7 +30,7 @@ Both of the above inputs are valid.
 
 To view the source code of this executable, you can add the `--source` option.
 
-```ps1
+```sh
 $ copy --source
 $ cp --source
 ```
